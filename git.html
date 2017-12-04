@@ -1,0 +1,70 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>时间选择器</title>
+
+<link href="/Style.css" rel="stylesheet" media="all" />
+
+<!--[if IE]>
+
+<style type="text/css">
+	li.remove_frame a {
+		padding-top: 5px;
+		background-position: 0px -3px;
+	}
+</style>
+
+<![endif]-->
+
+<script type="text/javascript" src="/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="/vue.min.js"></script>
+<script type="text/javascript">
+ dayList () {
+       /* get currentMonthLenght */
+        let currentMonthLength = new Date(this.tmpYear, this.tmpMonth + 1, 0).getDate();
+       /* get currentMonth day */
+        let daylist = Array.from({length: currentMonthLength}, (value, index) => {
+          return index + 1
+        });
+        return daylist
+      },
+		  renderListDay(){
+        let list = [];
+        for (let k = this.spin.day.head; k <= this.spin.day.last; k++) {
+          let obj = {
+            value: this.getData(k, 'day'),
+            index: k,
+          };
+          list.push(obj)
+        }
+        return list
+      },
+</script>
+
+</head>
+<body>
+<div class="picker-panel">
+<!--other box-->
+<div class="box-day">
+  <div class="check-line"></div>
+  <div class="day-checked">
+    <div class="day-list">
+      <div class="list-div" v-for="day in renderListDay">
+       {{day.value}}
+      </div>
+    </div>
+  </div>
+  <div class="day-wheel">
+    <div class="wheel-div" v-for="day in renderListDay" transform: rotate3d(1, 0, 0, 80deg) translate3d(0px, 0px, 2.5rem);>
+    {{day.value}}
+    </div>
+  </div>
+</div>
+<!--other box-->
+</div>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+.day-wheel{
+    position: absolute;
+    overflow: visible;
+    height: px2rem(68px);
+    font-size: px2rem(36px);
+    top:px2rem(180px);
+    left: 0;
+    right: 0;
+    color:$unchecked-date;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    .wheel-div{
+     height: px2rem(68px);
+     line-height: px2rem(68px);
+     position: absolute;
+     top:0;
+     width: 100%;
+     text-align: center;
+     -webkit-backface-visibility: hidden;
+     backface-visibility: hidden;
+     white-space: nowrap;
+     overflow: hidden;
+     text-overflow: ellipsis;
+    }
+   }
