@@ -2,12 +2,6 @@
     position: absolute;
     overflow: visible;
     height: px2rem(68px);
-    font-size: px2rem(36px);
-    top:px2rem(180px);
-    left: 0;
-    right: 0;
-    color:$unchecked-date;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
+
 
    }
